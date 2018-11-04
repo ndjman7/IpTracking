@@ -29,11 +29,9 @@ class TrackingView(View):
                 ip_address=remote_address,
                 user_agent=http_user_agent,
                 referer=http_referer,
-                visits=1
             )
         redirection = Redirection.objects.last()
-
         if redirection is None:
             site = get_current_site(request)
-            return redirect(site.domain + '/admin/')
+            return redirect(site + '/admin/')
         return redirect(redirection.url)
