@@ -1,7 +1,7 @@
 # Config
 .config_secret
 .idea
-
+static_root
 # Created by https://www.gitignore.io/api/git,macos,python,pycharm
 
 ### Git ###
