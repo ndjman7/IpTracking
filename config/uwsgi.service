@@ -3,7 +3,7 @@ Description=uWSGI Emperor service
  After=syslog.target 
 
 [Service]
- ExecStart=/home/ubuntu/venv/bin/uwsgi —master --emperor /home/ubuntu/IpTracking/config
+ ExecStart=/root/venv/bin/uwsgi —master --emperor /root/IpTracking/config
  Restart=always 
 KillSignal=SIGQUIT 
 Type=notify 
