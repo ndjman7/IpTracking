@@ -5,7 +5,6 @@ class HTTPRequestInfo(models.Model):
     ip_address = models.CharField(max_length=100)
     user_agent = models.CharField(max_length=200)
     referer = models.CharField('유입 경로', max_length=300, blank=True)
-    visits = models.IntegerField('방문 횟수', default=1)
     created_at = models.DateTimeField('생성 시간', auto_now_add=True)
     updated_at = models.DateTimeField('최종 방문 시간', auto_now=True)
 
@@ -15,10 +14,6 @@ class HTTPRequestInfo(models.Model):
 
     def __str__(self):
         return self.ip_address
-
-    def increase_visits(self):
-        self.visits += 1
-        self.save()
 
 
 class Redirection(models.Model):
