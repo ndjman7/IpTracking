@@ -6,10 +6,10 @@ class HTTPRequestInfoAdmin(admin.ModelAdmin):
 
     fieldsets = [
         ('정보', {'fields': [
-            ('ip_address', 'user_agent', 'referer', ),
+            ('ip_address', 'user_agent', 'referer', ), ('memo', ),
         ]}),
     ]
-    list_display = ('ip_address', 'user_agent', 'referer', 'created_at', )
+    list_display = ('ip_address', 'user_agent', 'referer', 'memo', 'created_at', )
 
     search_fields = ('ip_address', 'referer')
 
