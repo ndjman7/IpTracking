@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class TrafficGroup(models.Model):
+class TrackingGroup(models.Model):
     name = models.CharField('팀 이름', max_length=100)
     description = models.TextField('설명', blank=True)
     entry_name = models.CharField(verbose_name='유입 경로 이름', max_length=100, unique=True)
@@ -16,7 +16,7 @@ class TrafficGroup(models.Model):
 
 
 class HTTPRequestInfo(models.Model):
-    group = models.OneToOneField(TrafficGroup, verbose_name='팀', on_delete=models.CASCADE, null=True)
+    group = models.OneToOneField(TrackingGroup, verbose_name='팀', on_delete=models.CASCADE, null=True)
     ip_address = models.CharField(max_length=100)
     user_agent = models.CharField(max_length=200)
     referer = models.CharField('유입 경로', max_length=300, blank=True)
