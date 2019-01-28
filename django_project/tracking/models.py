@@ -1,7 +1,22 @@
 from django.db import models
 
 
+class TrafficGroup(models.Model):
+    name = models.CharField('팀 이름', max_length=100)
+    description = models.TextField('설명', blank=True)
+    entry_name = models.CharField(verbose_name='유입 경로 이름', max_length=100, unique=True)
+    redirect_url = models.URLField(verbose_name='이동시킬 경로')
+
+    class Meta:
+        verbose_name = '팀'
+        verbose_name_plural = '팀(들)'
+
+    def __str__(self):
+        return self.name
+
+
 class HTTPRequestInfo(models.Model):
+    group = models.OneToOneField(TrafficGroup, verbose_name='팀', on_delete=models.CASCADE, null=True)
     ip_address = models.CharField(max_length=100)
     user_agent = models.CharField(max_length=200)
     referer = models.CharField('유입 경로', max_length=300, blank=True)
