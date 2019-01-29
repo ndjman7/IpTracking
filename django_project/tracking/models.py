@@ -30,16 +30,3 @@ class HTTPRequestInfo(models.Model):
 
     def __str__(self):
         return self.ip_address
-
-
-class Redirection(models.Model):
-    url = models.URLField()
-    created_at = models.DateTimeField('생성 시간', auto_now_add=True)
-    updated_at = models.DateTimeField('수정 시간', auto_now=True)
-
-    class Meta:
-        verbose_name = '리다이렉트 경로'
-        verbose_name_plural = '리다이렉트 경로(들)'
-
-    def __str__(self):
-        return self.url

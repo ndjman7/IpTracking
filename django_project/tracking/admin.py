@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HTTPRequestInfo, Redirection, TrackingGroup
+from .models import HTTPRequestInfo, TrackingGroup
 
 
 class HTTPRequestInfoAdmin(admin.ModelAdmin):
@@ -15,7 +15,6 @@ class HTTPRequestInfoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(HTTPRequestInfo, HTTPRequestInfoAdmin)
-admin.site.register(Redirection)
 
 
 @admin.register(TrackingGroup)
