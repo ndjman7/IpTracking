@@ -16,7 +16,7 @@ class TrackingGroup(models.Model):
 
 
 class HTTPRequestInfo(models.Model):
-    group = models.OneToOneField(TrackingGroup, verbose_name='팀', on_delete=models.CASCADE, null=True)
+    group = models.ForeignKey(TrackingGroup, verbose_name='팀', on_delete=models.CASCADE, null=True)
     ip_address = models.CharField(max_length=100)
     user_agent = models.CharField(max_length=200)
     referer = models.CharField('유입 경로', max_length=300, blank=True)
