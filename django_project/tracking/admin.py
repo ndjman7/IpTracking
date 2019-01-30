@@ -19,4 +19,5 @@ admin.site.register(HTTPRequestInfo, HTTPRequestInfoAdmin)
 
 @admin.register(TrackingGroup)
 class TrafficGroupAdmin(admin.ModelAdmin):
-    pass
+
+    list_display = ('name', 'entry_name', 'description', 'redirect_url', )
